@@ -15,13 +15,12 @@ public class PrintingService {
             System.out.println("1. COUNT EXPRESSION");
             System.out.println("2. CHECK IF PALINDROME");
             System.out.println("3. CHECK IF SMITH NUMBER");
-            System.out.println("4. ROOTS OF SQUARE EQUATION");
-            System.out.println("5. EXIT");
+            System.out.println("4. EXIT");
             System.out.print("INSERT YOUR OPTION: ");
 
             Scanner scanner = new Scanner(System.in);
             var scan = scanner.nextInt();
-            if (scan == 5){
+            if (scan == 4){
                 System.out.println("HAVE A NICE DAY :)");
                 break;
             }
@@ -36,12 +35,10 @@ public class PrintingService {
                     case 3:
                         SmithNumberHolder.returnIfSmithNumber();
                         break;
-                    case 4:
-                        break;
                     default:
                         System.out.println("NUMBER OUT OF RANGE INSERTED, TRY AGAIN");
                 }
-            } catch (NumberFormatException e){
+            } catch (Exception e){
                 logger.warning(e.getMessage());
             }
 
