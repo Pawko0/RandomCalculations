@@ -3,9 +3,12 @@ package org.example.inputDataHolders;
 import org.example.service.SmithNumberService;
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class SmithNumberHolder extends SmithNumberService {
     public static final SmithNumberHolder smithNumberHolder = new SmithNumberHolder();
+
+    public static final Logger logger = Logger.getLogger(SmithNumberHolder.class.getName());
 
     public static void returnIfSmithNumber(){
         Scanner scanner = new Scanner(System.in);
@@ -23,7 +26,7 @@ public class SmithNumberHolder extends SmithNumberService {
                 System.out.println("IT IS NOT A SMITH NUMBER");
             }
         } catch (Exception e){
-            e.printStackTrace();
+            logger.warning(e.getMessage());
         }
 
 

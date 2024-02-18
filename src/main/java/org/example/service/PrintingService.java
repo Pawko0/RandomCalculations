@@ -5,8 +5,11 @@ import org.example.inputDataHolders.PalindromeHolder;
 import org.example.inputDataHolders.SmithNumberHolder;
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class PrintingService {
+
+    public static final Logger logger = Logger.getLogger(SmithNumberHolder.class.getName());
     public static void print(){
         while (true) {
             System.out.println("1. COUNT EXPRESSION");
@@ -39,7 +42,7 @@ public class PrintingService {
                         System.out.println("NUMBER OUT OF RANGE INSERTED, TRY AGAIN");
                 }
             } catch (NumberFormatException e){
-                e.printStackTrace(); // dodac logowanie
+                logger.warning(e.getMessage());
             }
 
         }
